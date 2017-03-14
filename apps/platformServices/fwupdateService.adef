@@ -1,0 +1,29 @@
+
+sandboxed: false
+
+executables:
+{
+    fwupdateDaemon = ( $LEGATO_ROOT/components/fwupdate/fwupdateDaemon )
+}
+
+processes:
+{
+    run:
+    {
+        (fwupdateDaemon)
+    }
+
+    faultAction: restart
+    maxFileBytes: 2000K
+}
+
+bindings:
+{
+    fwupdateDaemon.le_pa_fwupdate_dualsys.le_fs -> fsService.le_fs
+}
+
+extern:
+{
+    fwupdateDaemon.fwupdateDaemon.le_fwupdate
+}
+
