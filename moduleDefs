@@ -1,0 +1,14 @@
+$(info Module: Dualsys)
+
+export LEGATO_DUALSYS_ROOT := $(abspath $(dir $(lastword $(MAKEFILE_LIST))))
+
+######### Platforms on which to use this module
+ifeq ($(TARGET),ar758x)
+     export READ_ONLY := 1
+
+     export SDEF_TO_USE ?= $(LEGATO_DUALSYS_ROOT)/ar758x.sdef
+else ifeq ($(TARGET),ar759x)
+     export READ_ONLY := 1
+
+     export SDEF_TO_USE ?= $(LEGATO_DUALSYS_ROOT)/ar759x.sdef
+endif
