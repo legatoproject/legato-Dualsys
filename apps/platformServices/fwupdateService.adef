@@ -17,11 +17,6 @@ processes:
     maxFileBytes: 2000K
 }
 
-bindings:
-{
-    fwupdateDaemon.le_pa_fwupdate_dualsys.le_fs -> fsService.le_fs
-}
-
 extern:
 {
     fwupdateDaemon.fwupdateDaemon.le_fwupdate
