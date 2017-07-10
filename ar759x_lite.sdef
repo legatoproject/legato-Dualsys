@@ -3,8 +3,6 @@
 //
 // Copyright (C) Sierra Wireless Inc.
 //
-// This is a sample for VWIF environment
-//
 // To build with this .sdef, just type:
 //     SDEF_TO_USE=modules/Dualsys/ar759x_lite.sdef make ar759x DISABLE_SMACK=1
 //--------------------------------------------------------------------------------------------------
