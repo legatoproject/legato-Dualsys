@@ -25,6 +25,10 @@ apps:
 
     // Command-line tools.
     $LEGATO_ROOT/apps/tools/tools
+
+#if ${LE_CONFIG_RPC} = y
+    $LEGATO_ROOT/framework/daemons/rpcProxy/rpcProxy
+#endif
 }
 
 commands:
@@ -35,6 +39,9 @@ commands:
     pmtool = tools:/bin/pmtool
     gnss = tools:/bin/gnss
     uartMode = tools:/bin/uartMode
+#if ${LE_CONFIG_RPC} = y
+    rpctool = tools:/bin/rpcTool
+#endif
 }
 
 bindings:
@@ -44,6 +51,6 @@ bindings:
 
 interfaceSearch:
 {
-    interfaces/modemServices
-    interfaces/positioning
+    $LEGATO_ROOT/interfaces/modemServices
+    $LEGATO_ROOT/interfaces/positioning
 }
